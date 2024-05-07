@@ -1,0 +1,34 @@
+<?php
+if(!empty($_GET["CodigoEstudiante"])){
+include("bd.php");
+$CodigoEstudiante=$_GET["CodigoEstudiante"];
+
+$ConsultaDel="DELETE FROM estudiante WHERE estudiante.CodigoEstudiante = ".$CodigoEstudiante;
+
+//echo $ConsultaDel;
+
+$ResultadoDel=False;                                            
+try { 
+  $ResultadoDel= mysqli_query($Conexion, $ConsultaDel);
+}
+    
+catch (Exception $e)
+      { $Mensaje="No se pudo eliminar el estudiantecon codigo: ".$CodigoEstudiante;
+        //$error=$e->getMessage();
+        print $e->getMessage();
+        //print $Resultado;
+      }                             
+     
+if($ResultadoDel == false) { $Mensaje="se pudo eliminar el estudiante con codigo: ".$CodigoEstudiante;
+   //die($mysqli_error($Conexion));
+}
+                      
+else { $Mensaje="Se elimino el estudiante con codigo: ".$CodigoEstudiante;
+    } //Fin del ciclo del listado de estudiante
+
+    echo $Mensaje;
+
+  }
+
+       
+?>
