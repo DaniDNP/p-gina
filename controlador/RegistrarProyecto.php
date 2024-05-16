@@ -8,7 +8,7 @@ $FechaRegistro = $_POST["FechaRegistro"];
 include("bd.php");
 
 $Consulta="INSERT INTO proyecto (CodigoProyecto, NombreProyecto, Resumen, FechaRegistro) VALUES ( '".$CodigoProyecto."', '".$NombreProyecto."', '".$Resumen."', '".$FechaRegistro."')";
-echo $Consulta;
+//echo $Consulta;
 $Resultado=False;                                            
 try   {
     $Resultado= mysqli_query($Conexion, $Consulta);

@@ -6,7 +6,7 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #38444d;
+    background-color: rgb(120, 0, 0);
   }
   
   li {
@@ -22,7 +22,7 @@ body {
   }
   
   li a:hover, .dropdown:hover .dropbtn {
-    background-color: red;
+    background-color: goldenrod;
   }
   
   li.dropdown {

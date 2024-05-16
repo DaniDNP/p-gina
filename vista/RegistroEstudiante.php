@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro del Estudiante</title>
-</head>
-<body>
-    <h1>Registro del Estudiante</h1>
-    <?php include("../controlador/RegistrarEstudiante.php"); ?>
-    <form action="RegistroEstudiante.php" method="post">
+<?php
+    include("Navegacion.php");
+    echo "<h1>REGISTRO DE ESTUDIANTES</h1>";
+    include("../controlador/RegistrarEstudiante.php"); 
+    echo'<form action="RegistroEstudiante.php" method="post">
         <label for="CodigoEstudiante">Codigo Estudiante:</label>
         <input type="number" name="CodigoEstudiante" id="CodigoEstudiante"><br>
         <label for="PrimerNombreEstudiante">Primer Nombre:</label>
@@ -21,18 +15,17 @@
         <input type="text" name="SegundoApellidoEstudiante" id="SegundoApellidoEstudiante"><br>
         <label for="CursoEstudiante">Curso Estudiante:</label>
         <input type="number" name="CursoEstudiante" id="CursoEstudiante"><br>
+        <label for="EspecialidadEstudiante">Especialidad</label>';
+        include ("../controlador/ComboEspecialidades.php"); 
+        echo' <br>
         
-        <label for="EspecialidadEstudiante">Especialidad</label>
-        <?php include ("../controlador/ComboEspecialidades.php"); ?>
-        <br>
-        
-        <label for="ProyectoEstudiante">Proyecto</label>
-        <?php include ("../controlador/ComboProyecto.php"); ?>
-        <br>
+        <label for="ProyectoEstudiante">Proyecto</label>';
+        include ("../controlador/ComboProyecto.php");
+        echo' <br>
 
         <label for="FechaNacimientoEstudiante">Fecha de Nacimiento:</label>
         <input type="date" name="FechaNacimientoEstudiante" id="FechaNacimientoEstudiante"><br>
         <button type="submit">Registrar Estudiante</button><br>
-    </form>
-</body>
-</html>
+    </form>';
+    include("Footer.php");
+    ?>

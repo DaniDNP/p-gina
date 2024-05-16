@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>LISTADO DE ESPECIALIDAD</h1>
-    <a href="RegistroEspecialidad.php">Registrar Especialidad</a>
-    <?php
-    include("../controlador/ListarEspecialidad.php");
-    ?>
 
-</body>
-</html>
+    <?php
+    include("Navegacion.php");
+    echo "<h1>LISTADO DE ESPECIALIDAD</h1>";
+    include("../controlador/ListarEspecialidad.php");
+    include("../controlador/EliminarEspecialidad.php");
+    include("Footer.php");
+    ?>

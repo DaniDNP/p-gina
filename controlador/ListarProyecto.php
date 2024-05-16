@@ -37,8 +37,8 @@ else {
             <td>'.$Registro["NombreProyecto"].'</td>
             <td>'.$Registro["Resumen"].'</td>
             <td>'.$Registro["FechaRegistro"].'</td>
-            <td><a href="ActualizacionEstudiante.php?CodigoEstudiante='.$Registro["CodigoEstudiante"].'" >Editar</td>
-            <td>Eliminar</td>
+            <td><a href="ActualizacionProyecto.php?CodigoProyecto='.$Registro["CodigoProyecto"].'" >Editar</td>
+            <td><a href="#" onclick="Preguntar('.$Registro ["CodigoProyecto"].')">Eliminar</td>
         </tr>';
         } //Fin del ciclo del listado de proyectos
     echo '</table>';
@@ -47,3 +47,14 @@ else {
 
        
 ?>
+       
+
+<script type="text/javascript">
+  function Preguntar(CodigoProyecto)
+  {
+    if(confirm("¿Estas seguro de eliminar el Proyecto con codigo "+CodigoProyecto+"?"))
+    {
+      window.location.href = "Proyectos.php?CodigoProyecto="+CodigoProyecto;
+    }
+  }
+</script>

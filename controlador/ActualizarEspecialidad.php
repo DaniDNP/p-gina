@@ -4,9 +4,9 @@
 
 include("bd.php");
 
-if (!empty($_GET["CodigoProyecto"])){
+if (!empty($_GET["CodigoEspecialidad"])){
 
-  $Consulta = "select * FROM proyecto where CodigoProyecto= ".$_GET["CodigoProyecto"];
+  $Consulta = "select * FROM especialidad where CodigoEspecialidad= ".$_GET["CodigoEspecialidad"];
   $Resultado=False;
   //echo $Consulta;
 
@@ -16,30 +16,29 @@ if (!empty($_GET["CodigoProyecto"])){
   }
     
   catch (Exception $e)
-      { $Mensaje="No se pudo actualizar el proyecto ";
+      { $Mensaje="No se pudo actualizar la especialidad ";
         //$error=$e->getMessage();
         //print $e->getMessage();
         //print $Resultado;
       }                             
      
-  if($Resultado == False) { $Mensaje="No se pudo actualizar el proyecto ".$_GET["CodigoProyecto"];
+  if($Resultado == False) { $Mensaje="No se pudo actualizar la especialidad ".$_GET["CodigoEspecialidad"];
   }
                 //die($mysqli_error($Conexion));
                   
 
-  else {$Mensaje="Se pudo actualizar el proyecto ".$_GET["CodigoProyecto"];
+  else {$Mensaje="Se pudo actualizar la especialidad ".$_GET["CodigoEspecialidad"];
     $Registro=$Resultado->fetch_assoc();                                       
   } 
   }                 
 
 
 
-else if (!empty($_POST["CodigoProyecto"])  && !empty($_POST["NombreProyecto"])  && !empty($_POST["Resumen"])  && !empty($_POST["FechaRegistro"])) {
+else if (!empty($_POST["CodigoEspecialidad"])  && !empty($_POST["NombreEspecialidad"])) {
 
-  $CodigoProyecto = $_POST["CodigoProyecto"];
-  $NombreProyecto = $_POST["NombreProyecto"];
-  $Resumen = $_POST["Resumen"];
-  $FechaRegistro = $_POST["FechaRegistro"];
+  $CodigoEspecialidad = $_POST["CodigoEspecialidad"];
+  $NombreEspecialidad = $_POST["NombreEspecialidad"];
+
 
   $Consulta ="UPDATE proyecto SET CodigoProyecto = '".$CodigoProyecto."', NombreProyecto = '".$NombreProyecto."', Resumen = '".$Resumen."', FechaRegistro = '".$FechaRegistro."' WHERE proyecto.CodigoProyecto = ".$_POST["CodigoActual"];
 
